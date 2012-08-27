@@ -10,6 +10,7 @@
 #                               "skip_gemfile" => true)
 
 # so have a bash wrapper function
+# can be in ~/.bash_profile
 # function rails_new()
 # {
 #   if [ -z "$1" ] #zero length?
@@ -63,7 +64,9 @@ copy_file "~/.bootstrap/rails/base_ui/Gemfile", "Gemfile"
 copy_file "~/.bootstrap/rails/base_ui/Gemfile.lock", "Gemfile.lock"
 run "cp -f ~/.bootstrap/rails/base_ui/dot_gitignore .gitignore"
 
+# TODO: cannot run "rvm --rvmrc" inside this script
 # `rvm --rvmrc --create ruby-1.9.3-p194@#{app_name}`
+
 copy_file "~/.bootstrap/rails/base_ui/dot_rvmrc", ".rvmrc"
 gsub_file '.rvmrc', /GIVE_A_GEMSET/, app_name
 
@@ -81,7 +84,8 @@ TODO:
 5. git commit
 5. rake db:migrate
 6. git commit
-7. add project specific README
+7. vendorize the gems so subsequent gem installs are faster
+8. add project specific README
 README
 
 git :init
