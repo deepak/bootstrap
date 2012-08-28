@@ -9,34 +9,10 @@
 #                               "skip_test_unit" => true,
 #                               "skip_gemfile" => true)
 
-# so have a bash wrapper function
-# can be in ~/.bash_profile
-# function rails_new()
-# {
-#   if [ -z "$1" ] #zero length?
-#   then
-#     echo "[ERROR] please provide app name. usage: rails_new <app-name>"
-#     return 1;
-#   else
-#     app_name=$1;
-#     if [ -z "$2" ] #zero length?
-#     then
-#         # --skip-bundle as we will do that after creating a .rvmrc
-#         # -d postgresql, use postgres as sqlite/mysql is the default
-#         # -T skip Test::Unit as will use rspec
-#         cmd="rails new ${app_name} --skip-bundle --skip-gemfile -d postgresql -T"
-#     else
-#         template_path=$2;
-#         # --skip-bundle as we will do that after creating a .rvmrc
-#         # -d postgresql, use postgres as sqlite/mysql is the default
-#         # -T skip Test::Unit as will use rspec
-#         cmd="rails new ${app_name} --skip-bundle --skip-gemfile -d postgresql -T -m ${template_path}"
-#     fi
-#     echo $cmd
-#     $cmd
-#     wait
-#   fi
-# }
+# NOTE: we have a bash wrapper function
+# at rails/rails_new.sh
+# inside this project
+# it defines a bash function called rails_new
 
 def silence_stream(out=STDOUT)
   f = File::open('/dev/null', 'w')
