@@ -79,7 +79,7 @@ TODO:
 2. change ~/.gemrc to
    install: --no-rdoc --no-ri 
    update:  --no-rdoc --no-ri
-3. gem install bundler
+3. gem install bundler -v 1.1.5
 4. bundle install
 5. git commit
 5. rake db:migrate
